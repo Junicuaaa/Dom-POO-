@@ -7,8 +7,8 @@
     <title>Document</title>
     <script src="main.js" defer></script>
 </head>
-<body>
-    <form>
+<body style="background-color: darkcyan;">
+    <form id="form1">
         <fieldset>
             <legend>Clase Lapiz</legend>
             <label>Color</label>
@@ -17,10 +17,10 @@
             <input type="range" name="dimension"><br>
             <fieldset>
                 <legend>Marca</legend>
-                <input type="radio" name="marca" value="Mongol"><label>Mongo</label><br>
-                <input type="radio" name="marca" value="Norma"><label>Norma</label><br>
-                <input type="radio" name="marca" value="Fabel Castle"><label>Fabel Castle</label><br>
-                <input type="radio" name="marca" value="Big"><label>Big</label><br>
+                <input type="radio" name="marca" value="mongol"><label>Mongol</label><br>
+                <input type="radio" name="marca" value="norma"><label>Norma</label><br>
+                <input type="radio" name="marca" value="faber Castlle"><label>Faber Castlle</label><br>
+                <input type="radio" name="marca" value="big"><label>Big</label><br>
             </fieldset>
             <fieldset>
                 <legend>Borrador</legend>
@@ -29,8 +29,8 @@
             </fieldset>
             <fieldset>
                 <legend>Material</legend>
-                <input type="radio" name="material" value="Madera"><label>Madera</label><br>
-                <input type="radio" name="material" value="Goma"><label>Goma</label><br>
+                <input type="radio" name="material" value="madera"><label>Madera</label><br>
+                <input type="radio" name="material" value="goma"><label>Goma</label><br>
             </fieldset>
             <input type="submit" value="Enviar">
         </fieldset>
@@ -45,8 +45,8 @@
                 <th>Borrador</th>
                 <th>Material</th>
             </tr>
-        </thead> 
-        <tbody>
+        </thead>
+        <tbody id="table">
         </tbody>
     </table>
 </body>
