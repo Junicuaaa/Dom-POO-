@@ -43,7 +43,7 @@ const showData = (element)=>{
             <td bgcolor="${element.color}"></td>
             <td>${element.dimension}</td>
             <td>${element.marca}</td>
-            <td>${element.borrador}</td>
+            <td>${element.borrador === "true"? `si tiene` : `no tiene`}</td>
             <td>${element.material}</td>
     `
     table.insertAdjacentElement("beforeend", tr)
