@@ -1,5 +1,4 @@
 class Lapiz {
-    #marca
     constructor({color = "#fff700", borrador = true, dimension = 19, marca = "mongol", material= "madera"})
     {
         this.color = color;
@@ -19,7 +18,6 @@ class Lapiz {
         this.material = material;
     }
 }
-
 let obj = new Lapiz({});
 let objData = obj.getData();
 let arr1 = document.querySelectorAll(`[name="marca"]`);
@@ -28,23 +26,14 @@ let arr3 = document.querySelectorAll(`[name="material"]`);
 let colorDom = document.querySelector(`[name="color"]`);
 let range = document.querySelector(`[name="dimension"]`);
 let table = document.querySelector("#table");
-let tableArr = new Array();
-let i = 0;
-const showData = (element)=>{
-    // let tr = document.createElement("tr")
-    // tr.classList.add(`tr${i++}`)
-    // console.log(tr);
-    // table.insertAdjacentElement("beforeend", tr);
-    // let tableTr = document.querySelector(`.tr${i}`)
-    // console.log(tableTr);
-    // // tableArr.unshift()
+const showData = ()=>{
     let tr = document.createElement("tr");
     tr.innerHTML = `
-            <td bgcolor="${element.color}"></td>
-            <td>${element.dimension}</td>
-            <td>${element.marca}</td>
-            <td>${element.borrador === "true"? `si tiene` : `no tiene`}</td>
-            <td>${element.material}</td>
+            <td bgcolor="${objData.color}"></td>
+            <td>${objData.dimension}</td>
+            <td>${objData.marca}</td>
+            <td>${objData.borrador === "true"? `si tiene` : `no tiene`}</td>
+            <td>${objData.material}</td>
     `
     table.insertAdjacentElement("beforeend", tr)
 }
@@ -70,8 +59,9 @@ const showData = (element)=>{
 
 const FORM = document.querySelector("#form1");
 FORM.addEventListener("submit", (e)=>{
-    let data = Object.fromEntries(new FormData(e.target))
-    console.log(data);
+    let data = Object.fromEntries(new FormData(e.target));
     e.preventDefault();
-    showData(data)
+    obj.setData(data);
+    objData.getData();
+    showData();
 });
